@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </nav>
       </header>
       <main>
-        <Component {...pageProps} />
+          <Component {...pageProps} />
       </main>
     </>
   );

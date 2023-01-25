@@ -13,6 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel-plugin for production.
  */
 const documents = {
+    "\n  query Continents {\n    continents {\n      code\n      name\n    }\n  }\n": types.ContinentsDocument,
     "\n  query GetServerSidePropsCountries {\n    countries {\n      code\n      name\n      emoji\n    }\n  }\n": types.GetServerSidePropsCountriesDocument,
     "\n  query GetStaticPropsCountries {\n    countries {\n      code\n      name\n      capital\n      currency\n    }\n  }\n": types.GetStaticPropsCountriesDocument,
 };
@@ -31,6 +32,10 @@ const documents = {
  */
 export function graphql(source: string): unknown;
 
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n  query Continents {\n    continents {\n      code\n      name\n    }\n  }\n"): (typeof documents)["\n  query Continents {\n    continents {\n      code\n      name\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

@@ -7,7 +7,6 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: GetStaticPropsCountriesQueryDocument,
   });
-  console.log(data);
 
   return {
     props: {

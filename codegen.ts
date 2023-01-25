@@ -4,7 +4,8 @@ import { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
   schema: "https://countries.trevorblades.com",
-  documents: ["src/**/*.(ts|tsx)"],
+  // https://the-guild.dev/graphql/codegen/docs/config-reference/documents-field#document-scanner
+  documents: "src/**/!(*.d).{ts,tsx}",
   ignoreNoDocuments: true, // for better experience with the watcher
   generates: {
     "./src/gql/generated/": {

@@ -7,7 +7,6 @@ export async function getServerSideProps() {
   const { data } = await client.query({
     query: GetServerSidePropsCountriesQueryDocument,
   });
-  console.log(data);
 
   return {
     props: {
